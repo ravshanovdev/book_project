@@ -1,6 +1,7 @@
 import pytest
 from django.contrib.auth import get_user_model
-from .factory import UserFactory, EmployeeFactory
+from accounts.factory import UserFactory, EmployeeFactory
+from book.factory import BookFactory
 
 
 
@@ -24,4 +25,11 @@ def multi_employees(db):
     return EmployeeFactory.create_batch(5)
 
 
+@pytest.fixture
+def book(db):
+    return BookFactory()
 
+
+@pytest.fixture
+def multi_books(db):
+    return BookFactory.create_batch(5)
