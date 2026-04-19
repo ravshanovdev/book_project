@@ -147,7 +147,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/' # 'http://127.0.0.1:8000/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 

@@ -4,7 +4,7 @@ from rest_framework import status
 from .serializers import BookSerializer
 from .models import Book
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
 from django.shortcuts import get_object_or_404
 from rest_framework.parsers import FormParser, MultiPartParser
 
@@ -30,7 +30,7 @@ class AddBookAPIView(APIView):
 
 
 class GetBookAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     @swagger_auto_schema(
         tags=['book'],

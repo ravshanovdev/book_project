@@ -88,7 +88,7 @@ class AddEmployeeAPIView(APIView):
 
 
 class EmployeeListAPIView(generics.ListAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
 
